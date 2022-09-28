@@ -1,13 +1,20 @@
 const fn = require('./fn')
 
+let num = 10
+
+beforeEach(()=>{//테스트전에 초기화
+    num = 0
+})
+
 test('이거 에러',()=>{
     expect(()=>fn.throwErr())
     // expect(()=>fn.throwErr()).toThrow('ddddd')//
     // expect(()=>fn.throwErr()).toThrow('x')//
 })
 
-test('1은 1',()=>{
-    expect(1).toBe(1)
+test('0+1은 1',()=>{
+    num = fn.add(num, 1)
+    expect(num).toBe(100000)
 })
 
 test('2더하기 3은 5',()=>{

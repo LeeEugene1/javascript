@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트위임</title>
+</head>
+<body>
+    <h1>오늘의 할 일</h1>
+<ul class="itemList">
+	<li>
+		<input type="checkbox" id="item1">
+		<label for="item1">이벤트 버블링 학습</label>
+	</li>
+	<li>
+		<input type="checkbox" id="item2">
+		<label for="item2">이벤트 캡쳐 학습</label>
+	</li>
+</ul>
+<script>
+
+    //새로운 아이템은 작동불가
+    // var inputs = document.querySelectorAll('input');
+    // inputs.forEach(function(input) {
+    //     input.addEventListener('click', function(event) {
+    //         alert('clicked');
+    //     });
+    // });
+
+    //새 리스트 아이템을 추가하면?
+    var itemList = document.querySelector('.itemList')
+    var li = document.createElement('li')
+    var input = document.createElement('input')
+    var label = document.createElement('label')
+    var labelText = document.createTextNode('event delegation')
+
+    input.setAttribute('type', 'checkbox')
+    input.setAttribute('id','item3')
+    label.setAttribute('for', 'item3')
+
+    label.appendChild(labelText)
+    li.appendChild(input)
+    li.appendChild(label)
+    itemList.append(li)
+
+    //이벤트 버블링을 활용하여 해결
+    var itemList = document.querySelector('.itemList')
+    itemList.addEventListener('click', (e)=>{
+        // console.log(e.target)//이벤트가 발생된 태그
+        // console.log(e.currentTarget)//<ul>...<ul> 이벤트를주최하는 돔
+        // if(e.target.getAttrubute === item3){
+
+        // }
+        if(e.target.matches('label'))return;//closest
+        console.log(e.target.getAttrubute)
+        alert('clicked')
+    })
+</script>
+</body>
+</html>

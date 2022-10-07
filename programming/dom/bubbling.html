@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling</title>
+</head>
+<body>
+    <div class="one">
+        <div class="two">
+            <div class="three">3</div>
+        </div>
+    </div>
+    <script>
+        //Event bubbling : 상위 요소로의 이벤트 전파방식
+        //브라우저는 특정화면 요소에서 이벤트가 발생 => 최상단위에 있는 화면요소까지 이벤트 전파
+        //three > two > one
+        let divs = document.querySelectorAll('div')
+        divs.forEach(div => {
+            div.addEventListener('click', logEvent)//three, two, one
+        })
+        function logEvent(e){
+            // e.stopPropagation()//three
+            console.log(e.currentTarget.className)
+        }
+    </script>
+</body>
+</html>

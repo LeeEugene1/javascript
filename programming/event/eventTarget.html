@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #fruit{
+            display: flex;
+            list-style-type:none;
+            padding: 0;
+        }
+        #fruit li{
+            width: 100px;
+            cursor: pointer;
+        }
+        #fruit .active{
+            color:red;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="" id="">
+    <em class="message">off</em>
+    
+    <ul id="fruits">
+        <li id="apple" class="active">apple</li>
+        <li id="banana">banana</li>
+        <li id="orange">orange</li>
+    </ul>
+    <em class="selected">apple</em>
+    
+    <script>
+        const $checkbox = document.querySelector('input[type=checkbox]')
+        const $msg = document.querySelector('.message')
+    
+        $checkbox.onchange = e => {
+            //change이벤트를 발생하면 Event타입의 이벤트 객체가 생성된다.
+            console.log(Object.getPrototypeOf(e) === Event.prototype)
+
+            $msg.textContent = e.target.checked ? 'on' : 'off'
+
+            //e.target은 change이벤트를 발생시킨 dom요소 checkbox를 가리키고
+            //e.currentTarget은 이벤트 핸들러가 바인딩된 dom요소 checkbox를 가리킨다.
+            console.log(e.target === e.currentTarget)//true
+        }
+    </script>
+    <script>
+        const $fruits = document.getElementById('fruits')
+        const $selected = document.querySelector('.selected')
+
+        function activate({target}){
+            //이벤트를 발생시킨 요소(target)가 ul#fruits의 자식 요소가 아니라면 무시
+            if(!target.matches('#fruits > li'))return;
+            [...$fruits.children].forEach($fruit => {
+                $fruit.classList.toggle('active', $fruit === target)
+                $selected.textContent = target.id
+            })
+        }
+        
+        $fruits.onclick = activate
+
+        // $fruits.addEventListener('click',e=>{
+            
+        // })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Sorting</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        header h1{
+            text-transform: uppercase;
+        }
+        main .sort-options{
+            display: flex;
+            justify-content: space-between;
+
+            width: 100%;
+            max-width: 480px;
+            margin: 30px auto;
+        }
+        main .sort-options button{
+            flex:1 1 33%;
+            appearance: none;
+            background-color: lightblue;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            padding: 15px 0;
+            margin: 0 8px;
+            cursor: pointer;
+        }
+        main .list-headers{
+            display: flex;
+            justify-content: space-between;
+
+            width: 100%;
+            max-width: 480px;
+
+            margin:30px auto 0;
+            padding: 0 15px;
+        }
+        main .list{
+            display: block;
+            width: 100%;
+            max-width: 480px;
+            margin:0 auto;
+        }
+        main .list .list-item{
+            display: flex;
+            justify-content: space-between;
+
+            width: 100%;
+
+            margin:15px 0;
+            padding: 15px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+        main .list .list-item div:nth-child(1),
+        main .list .list-item div:nth-child(2){
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Object Sorting</h1>
+    </header>
+    <main>
+        <section class="sort-options">
+            <button class="sort-name">Sort by name</button>
+            <button class="sort-meta">Sort by meta</button>
+            <button class="sort-age">Sort by age</button>
+        </section>
+        <section class="list-headers">
+            <div class="header-title">name</div>
+            <div class="header-meta">Suit Colour</div>
+            <div class="header-age">Age</div>
+        </section>
+        <section class="list">
+            <div class="list-item">
+                <!-- <div class="item-title">Test 1</div>
+                <div class="item-meta">Meta 1</div>    
+                <div class="item-age">21</div>     -->
+            </div>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>

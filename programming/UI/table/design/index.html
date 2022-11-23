@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="table">
+        <div class="table__tabs"></div>
+        <div class="table__search"></div>
+        <div class="table__title">
+            <h1>Polls List</h1>
+        </div>
+        <div class="table__item">
+            <table>
+                <thead class="table__thead">
+                    <tr>
+                        <th>Race#</th>
+                        <th style="width:30%;">Title</th>
+                        <th>Vote ends</th>
+                        <th>Current status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="table__tbody">
+                    <tr class="table__row">
+                            <td class="table__cell table__cell--middle id" data-label="Race#" >63</td>
+                            <td class="table__cell title"data-label="Title" >
+                                <div>
+                                    <b>Opening Race #002</b>
+                                </div>
+                            </td>
+                            <td class="table__cell name"data-label="Vote ends" >
+                                <div>
+                                    <p>2022-10-09 20:00(UTC)</p>
+                                    <b>Closed</b>
+                                </div>
+                            </td>
+                            <td class="table__cell table__cell--middle weather">
+                                <div class="">
+                                    <img src="./sunny.png" alt="sunny">
+                                    <p>0.40%</p>
+                                </div>
+                                <div class="">
+                                    <img src="./snowy.png" alt="snowy">
+                                    <p>99.60%</p>
+                                </div>
+                                <div>
+                                    <img src="./rainy.png" alt="rainy">
+                                    <p>0.00%</p>
+                                </div>
+                                <div class="">
+                                    <img src="./stormy.png" alt="stormy">
+                                    <p>0.00%</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="buttonWrap">
+                                    <button id="voteResult" class="dao--button__mint" data-matchid="63">RESULT</button>
+                                    <button id="voteStatus" class="dao--button__normal" data-matchid="63" data-closed="1">HISTORY</button>
+                                </div>
+                            </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell table__cell--middle id" data-label="Race#" >63</td>
+                        <td class="table__cell title"data-label="Title" >
+                            <div>
+                                <b>Opening Race #002</b>
+                            </div>
+                        </td>
+                        <td class="table__cell name"data-label="Vote ends" >
+                            <div>
+                                <p>2022-10-09 20:00(UTC)</p>
+                                <b>Closed</b>
+                            </div>
+                        </td>
+                        <td class="table__cell table__cell--middle weather">
+                            <div class="">
+                                <img src="./sunny.png" alt="sunny">
+                                <p>0.40%</p>
+                            </div>
+                            <div class="">
+                                <img src="./snowy.png" alt="snowy">
+                                <p>99.60%</p>
+                            </div>
+                            <div>
+                                <img src="./rainy.png" alt="rainy">
+                                <p>0.00%</p>
+                            </div>
+                            <div class="">
+                                <img src="./stormy.png" alt="stormy">
+                                <p>0.00%</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="buttonWrap">
+                                <button id="voteResult" class="dao--button__mint" data-matchid="63">RESULT</button>
+                                <button id="voteStatus" class="dao--button__normal" data-matchid="63" data-closed="1">HISTORY</button>
+                            </div>
+                        </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+            
+        </div>
+    </div>
+</body>
+</html>

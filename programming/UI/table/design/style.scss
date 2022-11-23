@@ -1,0 +1,86 @@
+p{
+    padding: 0;
+    margin:0;
+}
+.table{
+    table{
+        border-collapse: collapse;
+    }
+    &__item{
+        color: rgb(111, 82, 70);
+        background: white;
+        border-radius: 30px;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(253, 252, 251);
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(227, 216, 196);
+        border-image: initial;
+        border-radius: 22px;
+    }
+    &__thead{
+        height: 50px;
+        th{
+            cursor: pointer;
+            &:hover{
+                color: red
+            }
+        }
+        
+    }
+    &__tbody{
+        
+    }
+    &__row{
+        padding: 30px 0;
+        border-top: 1px solid #e7e3eb;
+        height: 100px;
+        &:first-child{
+            border-top: none;
+        }
+    }
+    &__cell{
+        &--middle{
+            text-align: center;
+        }
+        &.weather{
+            margin-top: 5px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .table{
+        &__thead{
+            display: none;
+
+        }
+        &__row{
+            display: grid;
+            height: auto;
+            padding: 20px;
+        }
+        &__cell{
+            width: 100%;
+            display: flex;
+            &::before{
+                width: 100px;
+                content: attr(data-label);
+                text-align: left;
+            }
+        }
+    }
+    .buttonWrap{
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}
